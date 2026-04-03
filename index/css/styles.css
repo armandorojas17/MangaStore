@@ -1,28 +1,353 @@
-/* apply a natural box layout model to all elements, but allowing components to change */
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 *,
-*:before,
-*:after {
-  box-sizing: inherit;
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 body {
-  font-family: "Coming Soon", cursive;
-  font-weight: 400;
-  font-style: normal;
-  justify-content: center;
+    margin: 0;
+    font-family: "Coming Soon", cursive;
+    font-size: 1.6rem;
+    background-image: url("../img/background.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    color: #111;
 }
-.navbar{
-  display: flex;
-  background-color: black;
+
+img {
+    display: block;
+    max-width: 100%;
 }
-.mangast{
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+section {
+    padding: 1.5rem;
+}
+
+.site-wrapper {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+/* HEADER */
+.header {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    gap: 2rem;
+}
+.header a{
   color: white;
   font-size: 4.5rem;
+  font-weight: bold;
 }
-.ulnav{
-  display:flex
+
+
+.nav {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
+
+.nav a {
+    color: #fff;
+    font-size: 2rem;
+}
+
+/* PRODUCTOS + ASIDE */
+.top-section {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.products {
+    flex: 0 0 75%;
+}
+
+.best-sellers {
+    flex: 0 0 25%;
+}
+
+.products h2,
+.best-sellers h2,
+.blog-section h2,
+.about-section h2,
+.contact-section h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    flex: 0 0 calc(25% - 0.75rem);
+}
+
+.card img {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+}
+
+.card-body {
+    padding-top: 1rem;
+}
+
+.card-body h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.card-body p {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-weight: bold;
+}
+
+/* ASIDE */
+.best-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.best-item img {
+    width: 5rem;
+    height: 7rem;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    flex-shrink: 0;
+}
+
+.best-item p {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* BLOG */
+.blog-card {
+    display: flex;
+    min-height: 40rem;
+    background-color: lightcyan;
+    border-radius: 0.9rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.blog-card img {
+    width: 20%;
+    object-fit: cover;
+}
+
+.blog-content {
+    width: 80%;
+    padding: 4rem;
+}
+
+.blog-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.blog-content p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* SOBRE NOSOTROS */
+.about-section p {
+    max-width: 100rem;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+/* CONTACTO */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-top: 0.5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+}
+
+.contact-form button {
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #333;
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 2rem;
+    background-color: #000;
+    color: #eee;
+}
+
+.footer-columns {
+    display: flex;
+    gap: 2rem;
+    padding: 3rem 2rem;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+.footer-column h3 {
+    font-size: 2.4rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+}
+
+.footer-column p,
+.footer-column a {
+    display: block;
+    color: #eee;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.footer-column a:hover {
+    border-bottom: 1px solid gray;
+    width: fit-content;
+}
+
+.footer-bottom {
+    border-top: 1px solid #222;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-bottom p {
+    font-size: 1.2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: #eee;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 992px) {
+    .top-section {
+        flex-direction: column;
+    }
+
+    .products,
+    .best-sellers {
+        flex: 1 1 100%;
+    }
+
+    .card {
+        flex: 0 0 calc(50% - 0.5rem);
+    }
+
+    .footer-columns {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 3.8rem;
+    }
+
+    .nav {
+        justify-content: center;
+    }
+
+    .card {
+        flex: 0 0 100%;
+    }
+
+    .blog-card {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .blog-card img,
+    .blog-content {
+        width: 100%;
+    }
+
+    .blog-card img {
+        height: 28rem;
+    }
+
+    .blog-content {
+        padding: 2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+} 
